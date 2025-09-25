@@ -5,6 +5,8 @@ import { useDateDataStore } from "../../../shared/stores/useDateDataStore";
 import { Statistic } from "../../../entities/statistic/ui/stat";
 import { useEffect } from "react";
 import { YearSwitcher } from "../../../features/yearSwitcher/ui/YearSwitcher";
+import { DayDataSetterBtn } from "../../../features/dayDataSetter/ui/dayDataSetterBtn";
+import { DayDataSetterModal } from "../../dayDataSetterModal/ui/dayDataSetterModal";
 
 export const MainDataContent = () => {
   const currentYear = DateTime.now().year;
@@ -20,16 +22,18 @@ export const MainDataContent = () => {
     getWeek(year);
     getMonth(year);
   }, [year]);
-  /*fsdfsd*/
+
   return (
-    <main>
-      <h3>Кроки</h3>
+    <main className="main">
+      <h3 className="steps">Кроки</h3>
       <YearSwitcher />
       <DataTypeSetter />
-
-      <div>
+      <Graphic/>
+      <div className="stat-block"> 
         <Statistic />
+        <DayDataSetterBtn />
       </div>
+      <DayDataSetterModal/>
     </main>
   );
 };

@@ -1,4 +1,11 @@
-import { BarChart, Bar, XAxis, YAxis, Tooltip } from "recharts";
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  Tooltip,
+  ResponsiveContainer,
+} from "recharts";
 import { useDateDataStore } from "../../../shared/stores/useDateDataStore";
 import { useSelectedData } from "../../../shared/stores/selectedData";
 import { useEffect, useState } from "react";
@@ -18,14 +25,16 @@ export const Graphic = () => {
   }, [month, year, selected, week]);
   if (selArr) {
     return (
-      <BarChart data={selArr}>
-        <Bar dataKey="value" />
-        <XAxis dataKey="name" />
-        <YAxis />
-        <Tooltip />
-      </BarChart>
+      <ResponsiveContainer>
+        <BarChart width={700} height={400} data={selArr}>
+          <Bar dataKey="value" />
+          <XAxis dataKey="name" />
+          <YAxis />
+          <Tooltip />
+        </BarChart>
+      </ResponsiveContainer>
     );
-  }else{
-    return <h2>Щось пішло не так</h2>
+  } else {
+    return <h2>Щось пішло не так</h2>;
   }
 };

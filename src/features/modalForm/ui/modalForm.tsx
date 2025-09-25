@@ -9,6 +9,7 @@ export const ModalForm = (data: { dayIsAlreadySetted: boolean }) => {
   const setModalState = useDayDataSetterModalState((store) => store.setState);
   const [inputValue, setInputValue] = useState(0);
   const currentDate = DateTime.now();
+  const updateYear = useDateDataStore(store=>store.getYear)
   useEffect(() => {
     if (yearData) {
       setInputValue(yearData[currentDate.ordinal - 1].data);
@@ -20,20 +21,20 @@ export const ModalForm = (data: { dayIsAlreadySetted: boolean }) => {
       if (inputValue | 0) {
         updateCurrentDay(inputValue, yearData);
         setModalState();
+        updateYear(currentDate.year)
       }
     };
     return (
       <form onSubmit={(e) => handleSubmit(e)}>
         <input
           type="number"
-          value={inputValue}
           onChange={(e) => {
             if(typeof Number(e.target.value) == 'number'){
               setInputValue(Number(e.target.value))
             }
           }}
         />
-        <button type="submit">
+        <button type="submit" className="update">
           {data.dayIsAlreadySetted ? "Update" : "Set"}
         </button>
       </form>

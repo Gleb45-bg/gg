@@ -1,1 +1,138 @@
-@import "tailwindcss";
+*{
+    font-family: Montserrat;
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+input, button{
+    background: inherit;
+    outline: 0;
+    border: 0;
+}
+
+.steps{
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    max-width: 980px;
+    height: 100vh;
+    padding: 10px;
+    align-items: center;
+    margin-inline: auto;
+    position: relative;
+}
+
+.year-switcher p{
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.year-switcher-main-btn{
+    display: flex;
+    gap: 0px;
+    align-items: center;
+}
+
+.year-switcher-list{
+    box-shadow: 1px 1px 1px 1px;
+    border-top: 0;
+    padding: 10px;
+    
+    background: white;
+    border-radius: 0 0 10px 10px;
+    
+    position: absolute;
+}
+
+.year-switcher-list-btn{
+    font-size: 16px;
+}
+
+.year-switcher{
+    margin-bottom: 30px;
+}
+
+.sell-btn-cont{
+    border-radius: 10px;
+    background: rgb(197, 196, 196);
+    padding: 5px 10px;
+    display: flex;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.sell-btn:hover{
+    background: white;
+   
+}
+
+.sell-btn{
+    font-size: 16px;
+    font-weight: 600;
+     padding: 10px;
+     border-radius: 10px;
+}
+
+.stat-block{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 20px;
+    margin-top: 30px;
+    padding-inline: 30px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.stat-main-block{
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    
+}
+
+.day-data-btn{
+    border: 1px solid black;
+    padding: 5px 5px 2px 5px;
+    border-radius: 10px;
+}
+
+.modal{
+    background: white;
+    box-shadow: 2px 2px 2px 2px;
+    padding: 10px;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.modal form{
+    display: flex;
+}
+
+.modal input{
+    border: 2px solid black;
+    border-right: 0;
+    padding: 10px;
+    border-radius: 10px 0 0 10px;
+}
+
+.update {
+    border: 2px solid black;
+    border-left: 0;
+    padding: 10px;
+    border-radius: 0 10px 10px 0;
+}
+
+.close{
+    display: block;
+}

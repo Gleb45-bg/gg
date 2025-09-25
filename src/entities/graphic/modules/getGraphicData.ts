@@ -41,7 +41,7 @@ export const getGraphicData = (
     if (week) {
       for (let i = 0; i < 7; i++) {
         graphData.push({
-          name: DAYS_OF_WEEK[week[i].dayOfWeek],
+          name: DAYS_OF_WEEK[week[i].dayOfWeek - 1],
           value: week[i].data,
         });
       }

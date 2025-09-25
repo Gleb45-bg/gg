@@ -20,19 +20,19 @@ export const YearSwitcher = () => {
     getYearsList();
   }, []);
   return (
-    <div className="">
-      <button onClick={() => setModalState((state) => !state)}>
-        {currentTime.year}
-        {modalState ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+    <div className="year-switcher">
+      <button onClick={() => setModalState((state) => !state)} className="year-switcher-main-btn">
+        <p>{currentTime.year}</p>
+        <div>{modalState ? <ExpandLessIcon /> : <ExpandMoreIcon />}</div>
       </button>
-      <div style={{ display: modalState ? "flex" : "none" }}>
+      <div className="year-switcher-list" style={{ display: modalState ? "flex" : "none" }}>
         <>
           {allYears.map((el) => {
             const elName: string = el.name
               .replace(/\.[^/.]+$/, "")
               .replace("year", "");
 
-            return <button onClick={(e)=>{
+            return <button className="year-switcher-list-btn" onClick={(e)=>{
               e.preventDefault()
               setYear(yearControl, Number(elName))
             }}>{elName}</button>;

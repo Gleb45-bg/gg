@@ -4,14 +4,15 @@ import { useDayDataSetterModalState } from "../../../shared/stores/dayDataSetter
 import { useDateDataStore } from "../../../shared/stores/useDateDataStore";
 import { currentDayCheck } from "../modules/checkCurrecntDay/currentDayCheck";
 
-export const dayDataSetterModal = () => {
+export const DayDataSetterModal = () => {
   const modalState = useDayDataSetterModalState((store) => store.state);
   const yearData = useDateDataStore((store) => store.year);
   const dayIsAlreadySetted: boolean | null = currentDayCheck(yearData);
+  
   if (yearData && dayIsAlreadySetted == true || false) {
     return (
-      <div style={{ display: modalState ? "flex" : "none" }}>
-        <div>
+      <div style={{ display: modalState ? 'flex' : 'none' }} className="modal">
+        <div className="close">
           <ModalClose />
         </div>
         <ModalForm dayIsAlreadySetted={dayIsAlreadySetted} />
